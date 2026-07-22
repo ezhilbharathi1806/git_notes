@@ -1,0 +1,22 @@
+Git to add a local worksapce to newly created github repo
+
+1. Create the repo on GitHub/GitLab (empty, no README/gitignore/license).
+
+2. Init git locally in the workspace root:
+	bash
+	cd ~/embedded/workspace
+	git init
+	
+3. Add the .gitignore before staging anything.
+
+4. Stage only what should be tracked:
+	bash
+	git add .
+	git status   # sanity check
+	
+5. Commit and push:
+	bash
+	git commit -m "Initial commit: Zephyr T3 workspace"
+	git branch -M main
+	git remote add origin <your-repo-url>
+	git push -u origin main
