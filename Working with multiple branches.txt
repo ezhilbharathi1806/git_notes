@@ -1,0 +1,59 @@
+
+1. Clone the git repository
+	  > git clone git@github.com:ezhilbharathi1806/git_notes.git <folder-name>
+2. Navigate to the repository
+	  > cd <folder-name>
+3. Create and switch to new branch <branch-name>
+	  > git checkout -b <branch-name>
+4. Make changes, edit files as needed in created new branch and check status
+	  > git status
+5. stage and commit changes
+	  > git add .
+	  > git commit -m "commit message"
+6.Push changes to remote <branch-name> branch
+	  > git push -u origin <branch-name>
+	  (or)
+	  > git push --set-upstream origin <branch-name>
+7.In github create a PR and Merge <branch-name> branch to main
+	  in github.com repo raise PR and merge with main
+8. deleted the created branch in both local and remote
+	  > git branch -d <branch-name> or > git branch -D <branch-name>   #to delete the created work branch in local
+	  > git push origin --delete <branch-name>	    # to delete the created work branch in remote
+
+=========================================================================================================
+
+if someone pushed some changes in main branch and I want to merge my branch <branch-name> with latest main
+
+> git checkout <branch-name>
+> git branch (and) > git status     #to verify branch and to check all my changes got tracked
+> git add .
+> git commit -m "commit msg"
+> git status                       # to check all my changes got tracked
+
+> git checkout main
+> git pull
+> git checkout <branch-name>
+> git merge main		#if in case conflict appears, resolve those conflicts in merge editor(vs code)
+
+when its time and you have to push your changes to remote
+> git branch or > git checkout <branch-name>   		#to verify you're on your created work branch
+> git push --set-upstream origin <branch-name>		#In github create a PR and Merge <branch-name> branch to main
+
+> git checkout main
+> git pull
+
+> git branch -d <branch-name> or > git branch -D <branch-name>  # to delete the created work branch in local
+> git push origin --delete <branch-name>	# to delete the created work branch in remote
+
+==========================================================================================================
+
+using stash and pop commands
+
+> git branch or > git checkout <branch-name>   		#to verify you're on your created work branch
+> git stash push -u -m "stash before merging main"	# Save all tracked and untracked changes temporarily.
+> git fetch origin
+> git checkout main
+> git pull origin main
+> git checkout <branch-name> 
+> git merge main
+> git stash pop		# Restore your stashed changes and remove the stash.
