@@ -22,6 +22,14 @@
 
 =========================================================================================================
 
+- Running "git fetch" followed by "git status" is the safest way to check if your local branch is up-to-date with your remote repository without altering your working files.
+- While "git status" alone only compares your current local state against its last known copy of the remote, running git fetch first downloads the latest tracking metadata from the server so git status can provide an accurate comparison
+
+	> git fetch
+	> git status
+
+=========================================================================================================
+
 if someone pushed some changes in main branch and I want to merge my branch <branch-name> with latest main
 
 > git checkout <branch-name>
